@@ -18,11 +18,12 @@ import { Iconify } from 'src/components/iconify';
 export type UserProps = {
   id: string;
   name: string;
-  role: string;
-  status: string;
-  company: string;
-  avatarUrl: string;
   isVerified: boolean;
+  avatarUrl: string;
+  trackingNumber: number;
+  startTime: string;
+  endTime: string;
+  rating: number;
 };
 
 type UserTableRowProps = {
@@ -55,10 +56,13 @@ export function UserTableRow({ row, selected, onSelectRow }: UserTableRowProps) 
             {row.name}
           </Box>
         </TableCell>
+        <TableCell>{row.startTime}</TableCell>
+        <TableCell>{row.endTime}</TableCell>
+        <TableCell>{row.isVerified}</TableCell>
+        <TableCell>{row.rating}</TableCell>
 
-        <TableCell>{row.company}</TableCell>
+        
 
-        <TableCell>{row.role}</TableCell>
 
         <TableCell align="center">
           {row.isVerified ? (
@@ -67,11 +71,6 @@ export function UserTableRow({ row, selected, onSelectRow }: UserTableRowProps) 
             '-'
           )}
         </TableCell>
-
-        <TableCell>
-          <Label color={(row.status === 'banned' && 'error') || 'success'}>{row.status}</Label>
-        </TableCell>
-
         <TableCell align="right">
           <IconButton onClick={handleOpenPopover}>
             <Iconify icon="eva:more-vertical-fill" />

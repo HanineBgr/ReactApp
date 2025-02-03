@@ -2,13 +2,13 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import { _tasks, _posts, _timeline } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard';
+import { UserView } from 'src/sections/user/view';
 
 import { AnalyticsNews } from '../analytics-news';
 import { AnalyticsStations } from '../analytics-available_stations';
 import { AnalyticsOrderTimeline } from '../analytics-order-timeline';
 import { AnalyticsTrafficBySite } from '../analytics-traffic-by-site';
 import { AnalyticsTasks } from '../analytics-tasks';
-import { UserView } from 'src/sections/user/view';
 
 // ----------------------------------------------------------------------
 
@@ -51,7 +51,8 @@ export function OverviewAnalyticsView() {
         </Grid>
 
         {/* User View Card (integrated into layout) */}
-        <Grid xs={12} md={6} lg={8}> {/* Adjust based on your desired grid size */}
+        <Grid xs={10} > {
+          }
           <UserView />  {/* Add User View here */}
         </Grid>
 
